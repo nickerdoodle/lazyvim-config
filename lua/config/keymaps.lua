@@ -60,13 +60,6 @@ vim.keymap.set("n", "K", "5k", {})
 ----Move content right of cursor to new line and stay in normal mode
 vim.keymap.set("n", "<leader>j", "i<CR><ESC>", {})
 
---Neotree
-vim.keymap.set("n", "<C-e>", "<cmd>Neotree toggle filesystem<cr>", {})
--- couldn't get this to override
--- vim.keymap.set("n", "<C-b>", "<cmd>Neotree toggle filesystem<cr>", {})
---
---
---
 ----------------------------------------
 if vim.g.vscode then
   require("config.vscode.keymaps")

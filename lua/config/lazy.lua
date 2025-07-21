@@ -53,15 +53,8 @@ require("lazy").setup({
 
 require("mason").setup({
   registries = {
+    -- Some registries added so that mason is aware of roslyn and can install it from mason
     "github:mason-org/mason-registry",
     "github:Crashdummyy/mason-registry",
   },
 })
-
--- Neotree
-vim.keymap.set("n", "<C-e>", "<cmd>Neotree toggle filesystem<cr>", {})
-vim.keymap.set("n", "<C-b>", "<cmd>Neotree toggle filesystem<cr>", {})
--- vim.keymap.set("n", "<C-b>", "<cmd>Neotree toggle<cr>", {})
--- vim.keymap.set("n", "<C-b>", "<cmd>Neotree left reveal_file=<cfile> reveal_force_cwd <cr>", {})
--- vim.keymap.set("n", "<C-b>", "<cmd>NeoTreeShowToggle<cr>", {})
--- vim.keymap.set("n", "<C-b>", "<cmd>lua print('hello')<cr>", {})

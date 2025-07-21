@@ -1,3 +1,4 @@
+-- TODO: see if we can remove the file. I think auto completion is handled with other plugin now. Check lazy docs
 return {}
 -- return {
 --   {
