@@ -14,7 +14,9 @@ return {
     opts = { ensure_installed = { "c_sharp" } },
   },
   {
-    "williamboman/mason.nvim",
+    -- "williamboman/mason.nvim",
+    -- name has changed
+    "mason-org/mason.nvim",
     opts = { ensure_installed = { "netcoredbg" } },
   },
   -- {

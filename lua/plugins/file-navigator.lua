@@ -9,17 +9,28 @@ return {
     },
     keys = {
       -- 👇 in this section, choose your own keymappings!
+      -- NOTE: Remap of <c-b> won't work well if you are using tmux
+      -- {
+      --   "<c-b>",
+      --   mode = { "n", "v" },
+      --   -- "<cmd>Yazi<cr>",
+      --   function()
+      --     local yazi = require("yazi")
+      --     yazi.yazi()
+      --   end,
+      --   desc = "Open yazi at the current file",
+      -- },
+      {
+        -- Open in the current working directory
+        "<leader>e",
+        "<cmd>Yazi<cr>",
+        desc = "Open yazi at the current file",
+      },
       {
         "<leader>-",
         mode = { "n", "v" },
         "<cmd>Yazi<cr>",
         desc = "Open yazi at the current file",
-      },
-      {
-        -- Open in the current working directory
-        "<leader>e",
-        "<cmd>Yazi cwd<cr>",
-        desc = "Open the file manager in nvim's working directory",
       },
       {
         -- Open in the current working directory

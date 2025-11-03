@@ -9,9 +9,10 @@ return {
   -- { "leap.nvim", vscode = true },
   { "mini.ai", vscode = true },
   { "mini.comment", vscode = true },
-  { "echasnovski/mini.pairs", version = "*", vscode = true },
+  -- { "echasnovski/mini.pairs", version = "*", vscode = true },
+  { "nvim-mini/mini.pairs", version = "*", vscode = true },
   {
-    "echasnovski/mini.surround",
+    "nvim-mini/mini.surround",
     version = "*",
     vscode = true,
   },

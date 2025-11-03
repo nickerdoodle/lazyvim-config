@@ -16,9 +16,6 @@ vim.keymap.set("i", "jj", "<esc>", {})
 vim.keymap.set("n", "<C-p>", "<cmd>FzfLua files<CR>", {})
 vim.keymap.set("n", "<leader>bl", "<cmd>FzfLua buffers<CR>", {})
 
--- Directory tree
-vim.keymap.set("n", "<C-b>", "<cmd>Neotree toggle<CR>", {})
-
 vim.keymap.set("n", "<leader>k", "<cmd>lua vim.lsp.buf.hover()<cr>", {})
 vim.keymap.set("n", ";", ":", {})
 
@@ -27,6 +24,13 @@ vim.keymap.set("n", "gD", "<cmd>FzfLua lsp_type_defs<CR>", {})
 vim.keymap.set("n", "gr", "<cmd>FzfLua lsp_references<CR>", {})
 vim.keymap.set("n", "gi", "<cmd>FzfLua lsp_implementations<CR>", {})
 vim.keymap.set("n", "<leader>ca", "<cmd>FzfLua lsp_code_actions<CR>", {})
+
+-- tmux-sessionizer
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<M-h>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
+vim.keymap.set("n", "<M-t>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
+vim.keymap.set("n", "<M-n>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
+vim.keymap.set("n", "<M-s>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
 
 -- for now, I prefer using these to navigate splits
 -- vim.keymap.set("n", "<C-j>", "<CMD>cnext<CR>", {})

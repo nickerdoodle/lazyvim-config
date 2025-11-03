@@ -9,9 +9,13 @@ if vim.g.vscode then
     { "nvim-treesitter-textobjects", enabled = false, vscode = true },
     { "nvim-ts-context-commentstring", enabled = false, vscode = false },
     { "nvim-telescope/telescope.nvim", enabled = false, vscode = false },
-    { "williamboman/mason.nvim", enabled = false, vscode = false },
+    -- name has changed
+    -- { "williamboman/mason.nvim", enabled = false, vscode = false },
+    { "mason-org/mason.nvim", enabled = false, vscode = false },
     { "Mofiqul/vscode.nvim", enabled = false, vscode = false },
-    { "echasnovski/mini.indentscope", enabled = false, vscode = false },
+    -- { "echasnovski/mini.indentscope", enabled = false, vscode = false },
+    -- name has changed
+    { "nvim-mini/mini.indentscope", enabled = false, vscode = false },
     { "lukas-reineke/indent-blankline.nvim", enabled = false, vscode = false },
   }
 end
