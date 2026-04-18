@@ -56,9 +56,12 @@ vim.keymap.set("n", "ge", function()
 end, {})
 
 -- Movement
-vim.keymap.set("n", "J", "5j", {})
+vim.keymap.set("n", "J", "5jzz", {})
 -- lsp override for K set in lspconfig.lua
-vim.keymap.set("n", "K", "5k", {})
+vim.keymap.set("n", "K", "5kzz", {})
+
+vim.keymap.set("n", "<C-d>", "<C-d>zz", {})
+vim.keymap.set("n", "<C-u>", "<C-u>zz", {})
 
 --Miscellaneous
 ----Move content right of cursor to new line and stay in normal mode
