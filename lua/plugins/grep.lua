@@ -1,9 +1,30 @@
 return {
   {
     "ibhagwan/fzf-lua",
-    -- fixed this issue after updating fzf version. Best to use :LazyHealth and see what diagnostics give to fix that
-    -- commit = "a5249629afe25215674c7a5e48f5cd2d416c58d8", -- latest verified commit before I saw a bug in fzf menu. TODO: check eventually that this is fixed to remove commit hash
-    mode = "n",
+  --         Problem: After upgrading Neovim from 0.11.5 to 0.12.1, running :Lazy update caused nvim to silently exit ~1 second after opening (dashboard would flash then
+  -- close).
+  --
+  -- Root cause: nvim-treesitter was completely rewritten for Neovim 0.12. The old master branch is frozen/archived, and the new main branch has a different API.
+  -- While your lock file already pointed to the main branch, the old compiled parsers on disk were incompatible with the new plugin version, causing a silent crash
+  -- on startup.
+  --
+  -- Solution:
+  -- 1. Updated nvim-treesitter and nvim-treesitter-textobjects to latest
+  -- 2-3a.(What I used)
+    -- (Here's what I used)
+    --   nvim --headless +'Lazy update nvim-treesitter nvim-treesitter-textobjects' +qa
+    -- nvim --headless +'TSUninstall all' +qa
+    -- nvim --headless +'TSUpdate' +qa
+  -- 2b. Removed old compiled parsers: rm -rf ~/.local/share/nvim/site/parser
+  -- 3b. Rebuilt all parsers: nvim --headless +'TSUpdate' +qa
+  --
+  -- Sources:
+  -- - https://www.qu8n.com/posts/treesitter-migration-guide-for-nvim-0-12
+  -- - https://github.com/nvim-treesitter/nvim-treesitter/issues/8636
+  -- - https://github.com/nvim-treesitter/nvim-treesitter/issues/8497
+  -- - https://dotfiles.substack.com/p/whats-new-in-neovim-012
+
+
     keys = {
       {
         "<leader>ff",

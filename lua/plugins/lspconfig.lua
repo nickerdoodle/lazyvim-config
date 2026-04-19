@@ -16,6 +16,8 @@ return {
         keys = {
           -- disable K keymap that does vim.lsp.buf.hover()
           { "K", false },
+          -- disable gr -> FzfLua lsp_references (set by lazyvim fzf extra)
+          { "gr", false },
           { "<leader>k", "<cmd>lua vim.lsp.buf.hover()<cr>", has = "hover" },
         },
       },

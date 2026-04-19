@@ -19,11 +19,14 @@ vim.keymap.set("n", "<leader>bl", "<cmd>FzfLua buffers<CR>", {})
 vim.keymap.set("n", "<leader>k", "<cmd>lua vim.lsp.buf.hover()<cr>", {})
 vim.keymap.set("n", ";", ":", {})
 
-vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions<CR>", {})
-vim.keymap.set("n", "gD", "<cmd>FzfLua lsp_type_defs<CR>", {})
-vim.keymap.set("n", "gr", "<cmd>FzfLua lsp_references<CR>", {})
-vim.keymap.set("n", "gi", "<cmd>FzfLua lsp_implementations<CR>", {})
+-- vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions<CR>", {})
+-- vim.keymap.set("n", "gD", "<cmd>FzfLua lsp_type_defs<CR>", {})
+-- Commented out: conflicts with nvim 0.12 default gr* mappings (gra, grn, grr), causing input delay
+-- vim.keymap.set("n", "gr", "<cmd>FzfLua lsp_references<CR>", {})
+-- vim.keymap.set("n", "gi", "<cmd>FzfLua lsp_implementations<CR>", {})
 vim.keymap.set("n", "<leader>ca", "<cmd>FzfLua lsp_code_actions<CR>", {})
+vim.keymap.set("n", "<leader>q", "<cmd>FzfLua quickfix<CR>", {})
+vim.keymap.set("n", "<leader>sq", "<cmd>FzfLua grep_quickfix<CR>", {})
 
 -- tmux-sessionizer
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")

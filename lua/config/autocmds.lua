@@ -1,22 +1,25 @@
 -- Autocmds are automatically loaded on the VeryLazy event
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
-vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    local function toSnakeCase(str)
-      return string.gsub(str, "%s*[- ]%s*", "_")
-    end
 
-    if client.name == "omnisharp" then
-      local tokenModifiers = client.server_capabilities.semanticTokensProvider.legend.tokenModifiers
-      for i, v in ipairs(tokenModifiers) do
-        tokenModifiers[i] = toSnakeCase(v)
-      end
-      local tokenTypes = client.server_capabilities.semanticTokensProvider.legend.tokenTypes
-      for i, v in ipairs(tokenTypes) do
-        tokenTypes[i] = toSnakeCase(v)
-      end
-    end
-  end,
-})
+-- Commented out: omnisharp semantic token workaround is dead code since we
+-- switched to roslyn.nvim and omnisharp is disabled in plugins/lang/c_sharp.lua
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--   callback = function(ev)
+--     local client = vim.lsp.get_client_by_id(ev.data.client_id)
+--     local function toSnakeCase(str)
+--       return string.gsub(str, "%s*[- ]%s*", "_")
+--     end
+--
+--     if client.name == "omnisharp" then
+--       local tokenModifiers = client.server_capabilities.semanticTokensProvider.legend.tokenModifiers
+--       for i, v in ipairs(tokenModifiers) do
+--         tokenModifiers[i] = toSnakeCase(v)
+--       end
+--       local tokenTypes = client.server_capabilities.semanticTokensProvider.legend.tokenTypes
+--       for i, v in ipairs(tokenTypes) do
+--         tokenTypes[i] = toSnakeCase(v)
+--       end
+--     end
+--   end,
+-- })
